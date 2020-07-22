@@ -4,6 +4,8 @@ import CardList from '../Components/CardList';
 import SearchBox from '../Components/SearchBox.js';
 import './App.css';
 import Scroll from '../Components/Scroll.js';
+import Header from '../Components/Header';
+import CounterButton from '../Components/CounterButton'
 
 import {searchField, requestRobots} from '../actions.js';
 
@@ -39,7 +41,8 @@ class App extends Component {
             <h1>Loading</h1> :
             (
                 <div className='tc'>
-                    <h1 className='f1'>Robofriends</h1>
+                    <Header />
+                    <CounterButton color={'red'} />
                     <SearchBox searchChange = {onSearchChange}/>
                     <Scroll>
                         <CardList robots = {filteredRobots} />

@@ -23,5 +23,3 @@ export const requestRobots = () => (dispatch) => {
         payload: error
     }))
 }
-
-
