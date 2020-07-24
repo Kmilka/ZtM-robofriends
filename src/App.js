@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import CardList from '../Components/CardList';
-import SearchBox from '../Components/SearchBox.js';
+import CardList from './Components/CardList';
+import SearchBox from './Components/SearchBox.js';
+import Scroll from './Components/Scroll.js';
+import Header from './Components/Header';
 import './App.css';
-import Scroll from '../Components/Scroll.js';
-import Header from '../Components/Header';
-import CounterButton from '../Components/CounterButton'
+import CounterButton from './Components/CounterButton'
 
-import {searchField, requestRobots} from '../actions.js';
+import {searchField, requestRobots} from './actions.js';
 
 const mapStateToProps = state => {
     return {

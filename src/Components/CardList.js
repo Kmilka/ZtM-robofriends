@@ -7,6 +7,7 @@ const CardList = ( {robots} ) => {
         {
         robots.map((user,i) => 
         <Card 
+            aria-label='list of robo cards'
             key={i} 
             id={user.id} 
             name={user.name} 
