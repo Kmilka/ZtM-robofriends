@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e8890fcd850b4e1ad40e707056fb11ec",
+    "revision": "a38203a1d47461a868c32f653afe1d3c",
     "url": "/ztm-robofriends/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ztm-robofriends/static/css/2.3b6f1bda.chunk.css"
   },
   {
-    "revision": "3f7c3472acb2c7dccb12",
-    "url": "/ztm-robofriends/static/css/main.2292e34c.chunk.css"
+    "revision": "465612c816d4e686a211",
+    "url": "/ztm-robofriends/static/css/main.9a4aa099.chunk.css"
   },
   {
     "revision": "432f108a009832a7ed8e",
@@ -20,11 +20,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ztm-robofriends/static/js/2.6e6d0b07.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3f7c3472acb2c7dccb12",
-    "url": "/ztm-robofriends/static/js/main.c9d39155.chunk.js"
+    "revision": "465612c816d4e686a211",
+    "url": "/ztm-robofriends/static/js/main.b09138ef.chunk.js"
   },
   {
     "revision": "fc644a321fb87cb9c413",
     "url": "/ztm-robofriends/static/js/runtime-main.597edd97.js"
+  },
+  {
+    "revision": "82e09f7862a1e26fb7dfe1d0f8adc87f",
+    "url": "/ztm-robofriends/static/media/SEGA.82e09f78.TTF"
   }
 ]);
