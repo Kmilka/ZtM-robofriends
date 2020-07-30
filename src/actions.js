@@ -1,8 +1,8 @@
 import { 
     CHANGE_SEARCHFIELD, 
-    REQUEST_ROBOTS_FAILED, 
-    REQUEST_ROBOTS_PENDING, 
-    REQUEST_ROBOTS_SUCCESS
+    REQUEST_FAILED, 
+    REQUEST_PENDING, 
+    REQUEST_SUCCESS
 } from './constants.js';
 
 export const searchField = (text) => ({
@@ -10,16 +10,20 @@ export const searchField = (text) => ({
     payload: text
 })
 
-export const requestRobots = () => (dispatch) => {
-    dispatch({type: REQUEST_ROBOTS_PENDING});
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => dispatch({
-        type: REQUEST_ROBOTS_SUCCESS,
-        payload: users
-    }))
-    .catch(error => dispatch({
-        type: REQUEST_ROBOTS_FAILED,
-        payload: error
-    }))
-}
+const requestSuccess = response => ({
+    type: REQUEST_SUCCESS,
+    payload: response
+})
+
+const requestFailed = err => ({
+    type: REQUEST_FAILED,
+    payload: err
+})
+
+
+export const requestAnything = (API) => dispatch => {
+      dispatch({type: REQUEST_PENDING})
+      return API()
+        .then(response => dispatch(requestSuccess(response)))
+        .catch(err => dispatch(requestFailed(err)))
+    }

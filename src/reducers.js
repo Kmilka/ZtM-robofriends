@@ -1,8 +1,8 @@
 import { 
     CHANGE_SEARCHFIELD, 
-    REQUEST_ROBOTS_FAILED, 
-    REQUEST_ROBOTS_PENDING, 
-    REQUEST_ROBOTS_SUCCESS 
+    REQUEST_FAILED, 
+    REQUEST_PENDING, 
+    REQUEST_SUCCESS 
 } from './constants.js';
 
 const initialStateSearch = {
@@ -27,12 +27,12 @@ const initialStateRobots = {
 
 export const requestRobots = (state=initialStateRobots, action={}) => {
     switch(action.type) {
-        case REQUEST_ROBOTS_PENDING:
+        case REQUEST_PENDING:
             return Object.assign({}, state, {isPending: true}); 
-        case REQUEST_ROBOTS_SUCCESS:
+        case REQUEST_SUCCESS:
             return Object.assign({}, state, {robots: action.payload, isPending: false});
-        case REQUEST_ROBOTS_FAILED:
-            return Object.assign({}, state, {errorState: action.payload, isPending: false});
+        case REQUEST_FAILED:
+            return Object.assign({}, state, {error: action.payload, isPending: false});
         default:
             return state;
     }
