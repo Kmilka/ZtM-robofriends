@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: alpine:3.7
     steps:
+      - checkout
       - run:
           name: The First Step
           command: |
@@ -13,6 +14,7 @@ jobs:
     docker:
       - image: alpine:3.7
     steps:
+      - checkout
       - run:
           name: The First Step
           command: |
@@ -20,5 +22,6 @@ jobs:
 workflows:
   version: 2.1
   bobby_sally:
-    - bobby
-    - sally
+    jobs:
+      - bobby
+      - sally
