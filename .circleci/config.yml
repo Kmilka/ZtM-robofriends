@@ -1,27 +1,38 @@
 version: 2.1
 jobs:
-  bobby:
+  build:
     docker:
       - image: alpine:3.7
     steps:
       - checkout
       - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-  sally:
+          command: npm installing
+            npm install
+            CI=true npm run build
+  test:
     docker:
       - image: alpine:3.7
     steps:
       - checkout
       - run:
-          name: The First Step
+          name: testing
           command: |
-            echo 'Double trouble'
+            npm install
+            npm test
+  hitme:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          name: just testing circleci workflow
+          command: |
+            echo "i'm hit"
 workflows:
   version: 2.1
-  bobby_sally:
+  install_build_test:
     jobs:
-      - bobby
-      - sally
+      - build
+      - test:
+          requires:
+            - hitme
