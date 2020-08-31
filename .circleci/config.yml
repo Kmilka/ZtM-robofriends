@@ -1,7 +1,24 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  bobby:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+  sally:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Double trouble'
 workflows:
-  node-tests:
-    jobs:
-      - node/test
+  version: 2.1
+  bobby_sally:
+    - bobby
+    - sally
