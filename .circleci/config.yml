@@ -2,16 +2,16 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node:8.9
     steps:
       - checkout
       - run:
           command: npm installing
             npm install
-            CI=true npm run build
+            npm run build
   test:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node:8.9
     steps:
       - checkout
       - run:
@@ -21,7 +21,7 @@ jobs:
             npm test
   hitme:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node:8.9
     steps:
       - checkout
       - run:
