@@ -1,0 +1,38 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          command: npm installing
+            npm install
+            CI=true npm run build
+  test:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          name: testing
+          command: |
+            npm install
+            npm test
+  hitme:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          name: just testing circleci workflow
+          command: |
+            echo "i'm hit"
+workflows:
+  version: 2.1
+  install_build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - hitme
