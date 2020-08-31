@@ -33,6 +33,7 @@ workflows:
   install_build_test:
     jobs:
       - build
+      - hitme
       - test:
           requires:
             - hitme
