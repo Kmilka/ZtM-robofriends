@@ -25,6 +25,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -44,8 +49,10 @@
     "css-loader": "^3.4.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "husky": "^4.2.5",
     "mock-fetch": "^1.0.0",
     "prettier": "2.1.1",
+    "pretty-quick": "^3.0.0",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^1.1.2"
   }
