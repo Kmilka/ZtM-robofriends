@@ -5,29 +5,22 @@ jobs:
       - image: circleci/node:8.9
     steps:
       - checkout
-      - run:
-          command: npm installing
-            npm install
-            npm run build
+      - run: echo "npm installing"
+      - run: npm install
+      - run: npm run build
   test:
     docker:
       - image: circleci/node:8.9
     steps:
       - checkout
-      - run:
-          name: testing
-          command: |
-            npm install
-            npm test
+      - run: npm install
+      - run: npm test
   hitme:
     docker:
       - image: circleci/node:8.9
     steps:
       - checkout
-      - run:
-          name: just testing circleci workflow
-          command: |
-            echo "i'm hit"
+      - run: echo "i'm hit"
 workflows:
   version: 2.1
   install_build_test:
